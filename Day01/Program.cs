@@ -2312,8 +2312,11 @@ const string input = @"
 1331
 3420";
 
-var answerPart1 = input.Split("\r\n\r\n").Select(x => x.Split("\r\n").Where(x => x.Length > 0).Select(int.Parse).Sum()).Max();
-var answerPart2 = input.Split("\r\n\r\n").Select(x => x.Split("\r\n").Where(x => x.Length > 0).Select(int.Parse).Sum()).OrderDescending().Take(3).Sum();
 
-Console.WriteLine($"Part 1: {answerPart1}");
-Console.WriteLine($"Part 2: {answerPart2}");
+var caloriesPerElf = input.Split(Environment.NewLine).Select(x => x.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).Sum());
+
+var answerPart1 = caloriesPerElf.Max();
+var answerPart2 = caloriesPerElf.OrderDescending().Take(3).Sum();
+
+Console.WriteLine($"Part 1: {answerPart1}"); //  66487
+Console.WriteLine($"Part 2: {answerPart2}"); // 197301
