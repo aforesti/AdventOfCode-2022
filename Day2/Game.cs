@@ -1,46 +1,57 @@
+using System.Diagnostics;
+
 namespace Day2;
 
 public static class Game
 {
-    public enum GameMove { Rock = 1, Paper = 2, Scissors = 3 }
-    public enum GameResult { Win = 6, Draw = 3, Loss = 0 }
-    
-    public static int CalcScore(string input)
+    private enum GameMove { Rock = 1, Paper = 2, Scissors = 3 }
+    private enum GameResult { Win = 6, Draw = 3, Loss = 0 }
+
+    private static GameResult GetGameResult(char input)
     {
-        var player1Move = GetMove(input, 0);
-        var player2Move = GetMove(input, 1);
-        var gameResult = CalcGameResult(player1Move, player2Move);
-        return (int)gameResult + (int)player2Move;
-    }
-    
-    private static GameMove StrToMove(string c)
-    {
-        return c switch
+        return input switch
         {
-            "A" or "X" => GameMove.Rock,
-            "B" or "Y" => GameMove.Paper,
-            "C" or "Z" => GameMove.Scissors,
-            _ => throw new ArgumentException($"Invalid move: {c}"),
+            'X' => GameResult.Loss,
+            'Y' => GameResult.Draw,
+            'Z' => GameResult.Win,
+            _ => throw new ArgumentException("Invalid input"),
         };
     }
-    
-    public static GameMove GetMove(string input, int player)
+
+    public static int CalcScore(string input)
     {
-        var moves = input.Split(' ');
-        return StrToMove(moves[player]);
+        var move = GetMove(input);
+        var gameResult = GetGameResult(input[2]);
+        return (int)gameResult + (int)move;
     }
     
-    public static GameResult CalcGameResult(GameMove player1, GameMove player2)
+    private static GameMove GetGameMove(char input)
     {
-        if (player1 == player2)
-            return GameResult.Draw;
-        
-        return player2 switch
+        return input switch
         {
-            GameMove.Paper => player1 == GameMove.Rock ? GameResult.Win : GameResult.Loss,
-            GameMove.Rock => player1 == GameMove.Scissors ? GameResult.Win : GameResult.Loss,
-            GameMove.Scissors => player1 == GameMove.Paper ? GameResult.Win : GameResult.Loss,
-            _ => throw new ArgumentOutOfRangeException(nameof(player2), player2, null),
+            'A' => GameMove.Rock,
+            'B' => GameMove.Paper,
+            'C' => GameMove.Scissors,
+            _ => throw new ArgumentException($"Invalid move: {input}"),
+        };
+    }
+
+    private static GameMove GetMove(string input)
+    {
+        var player1Move = GetGameMove(input[0]);
+        var gameResult = GetGameResult(input[2]);
+        
+        if (gameResult == GameResult.Draw)
+        {
+            return player1Move;
+        }
+
+        return player1Move switch
+        {
+            GameMove.Paper => gameResult == GameResult.Loss ? GameMove.Rock : GameMove.Scissors,
+            GameMove.Rock => gameResult == GameResult.Loss ? GameMove.Scissors : GameMove.Paper,
+            GameMove.Scissors => gameResult == GameResult.Loss ? GameMove.Paper : GameMove.Rock,
+            _ => throw new ArgumentOutOfRangeException(),
         };
     }
 }
