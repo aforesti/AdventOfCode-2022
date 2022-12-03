@@ -8,7 +8,7 @@ public class Tests
     public void FinalTest()
     {
         var input = File.ReadAllLines("input.txt");
-        var score = input.Sum(Game.CalcScore);
+        var score = input.Sum(Game.GetGameScore);
         Assert.Equal(13193, score);
     }
     
@@ -18,7 +18,7 @@ public class Tests
     [InlineData("C Z", 7)]
     public void CalcGameScoreTest(string input, int expectedResult)
     {
-        var result = Game.CalcScore(input);
+        var result = Game.GetGameScore(input);
         Assert.Equal(expectedResult, result);
     }
 }
