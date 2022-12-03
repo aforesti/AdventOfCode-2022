@@ -40,4 +40,24 @@ public class Tests
         
         Assert.Equal(7826, result);
     }
+    
+    
+    [Theory]
+    [InlineData(new[] {"vJrwpWtwJgWrhcsFMMfFFhFp", "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL", "PmmdzqPrVvPwwTWBwg"}, "r")]
+    [InlineData(new[] {"wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn", "ttgJtRGJQctTZtZT", "CrZsJsPPZsGzwwsLwLmpwMDw"}, "Z")]
+    public void ShouldFindElfBadgeInTheRuckSack(string[] items, string badge)
+    {
+        var result = RuckSack.FindBadge(items);
+        
+        Assert.Equal(badge, result);
+    }
+    
+    [Fact]
+    public void ShouldGetTheTotalPriorityOfTheRuckSackWithElfBadge()
+    {
+        var input = File.ReadAllLines("input.txt");
+        var result = RuckSack.GetTotalPriorityWithBadge(input);
+        
+        Assert.Equal(2577, result);
+    }
 }

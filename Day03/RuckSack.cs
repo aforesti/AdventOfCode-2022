@@ -38,4 +38,26 @@ public static class RuckSack
 
         return totalPriority;
     }
+    
+    public static string FindBadge(string[] items)
+    {
+        if (items.Length != 3)
+            throw new Exception("Not valid elf group");
+
+        return items.SelectMany(x => x.ToCharArray()).First(c => items[0].Contains(c) && items[1].Contains(c) && items[2].Contains(c)).ToString();
+    }
+    
+    public static int GetTotalPriorityWithBadge(string[] input)
+    {
+        var totalPriority = 0;
+        // 3 items per group
+        for (var i = 0; i < input.Length; i += 3)
+        {
+            var group = input[i..(i + 3)];
+            var badge = FindBadge(group);
+            var priority = GetPriority(badge);
+            totalPriority += priority;
+        }
+        return totalPriority;
+    }
 }
