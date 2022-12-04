@@ -4,60 +4,21 @@ public static class RuckSack
 {
     public static string FindCommonItem(string items)
     {
-        try
-        {
-            var firstCompartment = items[..(items.Length / 2)];
-            var secondCompartment = items[(items.Length / 2)..];
-            var commonItem = firstCompartment.First(i => secondCompartment.Contains(i));
-            return commonItem.ToString();
-        }
-        catch (Exception)
-        {
-            Console.WriteLine($"{items} has no common item");
-            throw;
-        }
+        var firstCompartment = items[..(items.Length / 2)];
+        var secondCompartment = items[(items.Length / 2)..];
+        var commonItem = firstCompartment.First(i => secondCompartment.Contains(i));
+        return commonItem.ToString();
     }
 
-    public static int GetPriority(string commonItem)
-    {
-        if (commonItem[0] > 96)
-            return commonItem[0] - 96;
-        
-        return commonItem[0] - 64 + 26;
-    }
-    
-    public static int GetTotalPriority(string[] input)
-    {
-        var totalPriority = 0;
-        foreach (var items in input)
-        {
-            var commonItem = FindCommonItem(items);
-            var priority = GetPriority(commonItem);
-            totalPriority += priority;
-        }
+    public static int GetPriority(string commonItem) 
+        => commonItem[0] > 96 ? commonItem[0] - 96 : commonItem[0] - 64 + 26;
 
-        return totalPriority;
-    }
-    
     public static string FindBadge(string[] items)
-    {
-        if (items.Length != 3)
-            throw new Exception("Not valid elf group");
-
-        return items.SelectMany(x => x.ToCharArray()).First(c => items[0].Contains(c) && items[1].Contains(c) && items[2].Contains(c)).ToString();
-    }
+        => items[0].Intersect(items[1]).Intersect(items[2]).First().ToString();
     
-    public static int GetTotalPriorityWithBadge(string[] input)
-    {
-        var totalPriority = 0;
-        // 3 items per group
-        for (var i = 0; i < input.Length; i += 3)
-        {
-            var group = input[i..(i + 3)];
-            var badge = FindBadge(group);
-            var priority = GetPriority(badge);
-            totalPriority += priority;
-        }
-        return totalPriority;
-    }
+    public static int SolvePart1(IEnumerable<string> input) 
+        => input.Select(FindCommonItem).Select(GetPriority).Sum();
+    
+    public static int SolvePart2(IEnumerable<string> input)
+        => input.Chunk(3).Select(FindBadge).Select(GetPriority).Sum();
 }

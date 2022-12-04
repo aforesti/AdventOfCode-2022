@@ -36,7 +36,7 @@ public class Tests
     public void ShouldGetTheTotalPriorityOfTheRuckSack()
     {
         var input = File.ReadAllLines("input.txt");
-        var result = RuckSack.GetTotalPriority(input);
+        var result = RuckSack.SolvePart1(input);
         
         Assert.Equal(7826, result);
     }
@@ -56,7 +56,7 @@ public class Tests
     public void ShouldGetTheTotalPriorityOfTheRuckSackWithElfBadge()
     {
         var input = File.ReadAllLines("input.txt");
-        var result = RuckSack.GetTotalPriorityWithBadge(input);
+        var result = RuckSack.SolvePart2(input);
         
         Assert.Equal(2577, result);
     }
