@@ -11,8 +11,12 @@
       &lt;TestId&gt;xUnit::35CF245B-64BA-4467-81CE-5E113064C939::net7.0::Day04.UnitTest1&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;xUnit::58569E71-995A-4800-A556-236F74B4A376::net7.0::Day03.Tests&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;xUnit::35CF245B-64BA-4467-81CE-5E113064C939::net7.0::Day04.Tests&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::7199D42E-4F0C-4700-88E8-F35101493984::net7.0::Day06.UnitTest1.Test1&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::7199D42E-4F0C-4700-88E8-F35101493984::net7.0::Day06.UnitTest1.SolveTest&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::7199D42E-4F0C-4700-88E8-F35101493984::net7.0::Day06.UnitTest1.GetStartOfMessageMarkerTest&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::7199D42E-4F0C-4700-88E8-F35101493984::net7.0::Day06.Tests.SolveTest&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
     &lt;Project Location="C:\Users\afore\RiderProjects\AdventOfCode\Day05" Presentation="&amp;lt;Day05&amp;gt;" /&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d5ae7c11_002D677b_002D4bc6_002D8b74_002Dc4176377bdd4/@EntryIndexedValue">JetBrains.ReSharper.UnitTestFramework.Session.Serialization.SessionState</s:String></wpf:ResourceDictionary>
+	</wpf:ResourceDictionary>
