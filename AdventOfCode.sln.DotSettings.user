@@ -1,5 +1,10 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=62668612_002D26b7_002D4731_002D87af_002D950da22c6395/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ShouldFindCommonItemInTheRuckSack" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=155dbf0d_002D0281_002D45fb_002D8bc9_002Df5f97c4354ef/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::DDAC81F1-664E-4764-B775-D7B60A3A51DE::net7.0::TestProject1.UnitTest1.Test&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=62668612_002D26b7_002D4731_002D87af_002D950da22c6395/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ShouldFindCommonItemInTheRuckSack" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Or&gt;&#xD;
     &lt;TestAncestor&gt;&#xD;
       &lt;TestId&gt;xUnit::58569E71-995A-4800-A556-236F74B4A376::net7.0::Day03.Tests.ShouldGetTheTotalPriorityOfTheRuckSack&lt;/TestId&gt;&#xD;
@@ -15,8 +20,14 @@
       &lt;TestId&gt;xUnit::7199D42E-4F0C-4700-88E8-F35101493984::net7.0::Day06.UnitTest1.SolveTest&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;xUnit::7199D42E-4F0C-4700-88E8-F35101493984::net7.0::Day06.UnitTest1.GetStartOfMessageMarkerTest&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;xUnit::7199D42E-4F0C-4700-88E8-F35101493984::net7.0::Day06.Tests.SolveTest&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::DDAC81F1-664E-4764-B775-D7B60A3A51DE::net7.0::TestProject1.UnitTest1.Test&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
     &lt;Project Location="C:\Users\afore\RiderProjects\AdventOfCode\Day05" Presentation="&amp;lt;Day05&amp;gt;" /&gt;&#xD;
   &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d560d4fe_002De2e4_002D4397_002Daa50_002Dbf5eec070671/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Test" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::DDAC81F1-664E-4764-B775-D7B60A3A51DE::net7.0::TestProject1.UnitTest1.Test&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	</wpf:ResourceDictionary>
